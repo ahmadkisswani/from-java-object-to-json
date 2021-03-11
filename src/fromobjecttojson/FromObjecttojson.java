@@ -38,9 +38,9 @@ public class FromObjecttojson {
   
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String prettyJson = gson.toJson(mapper.writeValueAsString(us));
-            prettyJson =  prettyJson.replaceAll(",", ",\n") ;
+            prettyJson = prettyJson.replaceAll(",", ",\n");
+            prettyJson =  prettyJson.replaceAll("[\\\\_]", "");
             file.write(prettyJson);
-
             file.flush();
             file.close();
 
